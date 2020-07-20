@@ -3,14 +3,14 @@ Version:        %{VERSION}
 Release:        %{RELEASE}%{?dist}
 Summary:        The Vector Optimized Library of Kernels 
 Group:          System Environment/Libraries
-License:		GPLv3
+License:	GPLv3
 URL:            https://github.com/gnuradio/volk
 Source:         %{name}-%{version}.tar.gz      
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  cmake3
 BuildRequires:  python-mako
 BuildRequires:  python-six
-BuildRequires:  boost-devel
+BuildRequires:  boost169-devel
 BuildRequires:  orc-devel
 
 %description
@@ -36,7 +36,7 @@ Python files for %{name}.
 %setup
 
 %build
-cmake3 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=64 -DLIB_INSTALL_DIR:PATH=/usr/lib64
+cmake3 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=64 -DBOOST_INCLUDEDIR=/usr/include/boost169/ -DBOOST_LIBRARYDIR=/usr/lib64/boost169/
 
 make %{?_smp_mflags}
 

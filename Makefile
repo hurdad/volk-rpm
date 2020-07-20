@@ -1,6 +1,6 @@
 # volk
 version = 2.0.0
-release = 1
+release = 2
 name = volk
 full_name = $(name)-$(version)
 download_url = "https://github.com/gnuradio/$(name)/archive/v$(version).tar.gz"
